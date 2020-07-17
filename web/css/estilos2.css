@@ -1,0 +1,28 @@
+.tubody{
+     background-attachment: fixed;
+         background-image: url(../multimedia/img/perros.gif);
+    background-repeat: no-repeat;
+}
+
+.cuerp{
+    background-attachment: fixed;
+    background-image: url(../multimedia/img/fondo_perro.jpg);
+    background-repeat: repeat;
+}
+
+.iconito{
+    list-style-image: url(../multimedia/img/icono.png)
+}
+
+.btn {
+    color: #2F3A61;
+    /*background-image: linear-gradient(to bottom, #eb94d0, #2079b0);*/
+    font-size: 16;
+    background: transparent; 
+    border: 3px solid #2F3A61;/* Grosor del borde, estilo de línea y color */
+    border-radius: 6px;/* Añadir esquinas curvadas */
+}
+
+
+
+

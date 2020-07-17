@@ -1,0 +1,22 @@
+.casillas{
+    background-color: lightblue;
+    color: blueviolet;
+}
+
+
+.botones{
+    background-color: lightpink;
+        color:black;
+        font-weight: bold;
+    
+}
+
+.password{
+    background-color: chocolate;
+    color: crimson;
+}
+
+.select{
+    background-color: blue;
+    color: white;
+}

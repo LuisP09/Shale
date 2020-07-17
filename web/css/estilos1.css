@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color:white;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+    animation: cambia-color 25s linear infinite;
+    background-size: 400%,400%;    
+}
+.cuer{
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+    animation: cambia-color 10s linear infinite;
+    background: -webkit-linear-gradient(left,#54E0FF,#54FFCE);
+    background-size: 400%,400%;
+}
+
+@keyframes cambia-color{
+    0%{
+        background-position: 0%,50%;
+    }
+    50%{
+        background-position: 100%,50%;
+    }
+    100%{
+        background-position: 50%,0%;
+    }
+}
+
+.title{
+    font-size: 48px;
+    text-align: center;
+    color: black; 
+    font-family: cursive;
+}
+
+.logotipo{
+    width: 140px;
+    margin-top: 40px;
+}
+
+::placeholder{
+    color: black;
+}
+
+input[type="email"]{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    background: rgba(255,25,255,0.8);
+    border-radius: 2rem;
+    outline: 0px;
+    color: white;
+}
+
+input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    background: rgba(255,25,255,0.8);
+    border-radius: 2rem;
+    outline: 0px;
+    color: white;
+    
+    
+}
+
+input[type="submit"]{
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 100;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2rem;
+    border: 2px solid rgba(255,254,255,0.4);
+    outline: 0px;
+    color: black;
+    transition: background 300ms;
+}
+
+input[type="button"]:hover{
+    cursor: pointer;
+    background: rgba(255,255,255,0.6);
+}
+
+
+
+
+
