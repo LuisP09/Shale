@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>usuario</title>
+        <title>admin</title>
         <meta charset="UTF-8"> <!--formato de texto unificado 8, reconoce todos los sombolos del codigo ascii-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/estilos1.css">
@@ -14,11 +14,16 @@
             <table border="2" style="margin: 0 auto;" cellpadding=5 cellspacing=20 >
                 <tr>
                     <td> 
-                        <form action="" method="post">
+                        <form action="mostrar_premios.jsp" method="post">
                             <input name="btV" value="ver" type="submit" onclick="" style="font-size: 15px">
                         </form>
                     </td>
-                </tr>  
+                </tr>
+                <tr >
+                    <td>   
+                         <b><input name="registrar" value="Registar premios" type="submit" onclick="javascript:void(window.open('registro_premios.jsp'));" style="font-size: 15px"></b>
+                    </td>
+                </tr>    
             </table>
         </div>          
     </body>

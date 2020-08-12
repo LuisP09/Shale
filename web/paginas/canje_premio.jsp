@@ -1,81 +1,82 @@
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
 <%@page import="conexion.DBConexion"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="controlador.RegistroPre"%>
-
-
+<%@page import="java.util.ArrayList"%>
 <%!
-    private String id_premios;
-    private String nombre_premio;
-    private String coste_puntos;
-    private String descripcion;
-    private String imagen;
-    private String id_puntos;
-    RegistroPre registro;
+   String id_premios;
+   String nombre_premio;
+   String coste_puntos;
+   String descripcion;
+   String imagen;
+    ArrayList<RegistroPre> registro;
 %>
 <%
-    if (request.getAttribute("resgistro") != null) {
-        registro = (RegistroPre) request.getAttribute("registro");
-        id_premios = registro.getId_premios();
-        id_puntos = registro.getId_puntos();
-        nombre_premio = registro.getNombre_premio();
+    if (request.getAttribute("regis") != null) {
+        registro = (ArrayList) request.getAttribute("regis");
+        for(RegistroPre r: registro){
+        id_premios = r.getId_premios();
+        nombre_premio = r.getNombre_premio();
+        coste_puntos=r.getCoste_puntos();
+        descripcion=r.getDescripcion();
+        imagen =r.getImagen();
+        }
     } else {
         id_premios = "";
-        id_puntos = "";
-        nombre_premio = "";
+        /*nombre_premio = "";
+        imagen="";*/
     }
-
 %>
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../css/estilo_tablas.css" rel="stylesheet" type="text/css"/>
         <title>JSP Page</title>
     </head>
     <body>
-        <div class="container">
+         <h1>Premios</h1>
+        <form method="post" action="canje.jsp">
             <table border="1">
                 <thead>
                     <tr>
                         <th>Nombre producto</th>
-                        <th>Coste puntos</th>
-                        <th>Descripcion </th>
-                        <th>Imagen</th>
+                        <th>
+                            <input value="<%=id_premios%>" type="hidden" name="id_premio">
+                            
+                            <input value="<%=nombre_premio%>" type="text" name="txtN">
+                        </th>
                     </tr>
-                </thead>
-                <tbody>
-                    <%                        DBConexion db = new DBConexion();
-                        try {
-                            PreparedStatement consulta = db.getConexion().prepareStatement("select * from premios");
-
-                            ResultSet rs = consulta.executeQuery();
-                            while (rs.next()) {
-                    %>
-                <form method="post" action="">
                     <tr>
-                        <td><%= rs.getString("nombre_premios")%></td>
-                        <td><%= rs.getString("coste_puntos")%></td>
-                        <td><%= rs.getString("descripcion")%></td>
-                        <td><%= rs.getString("imagen")%></td>
+                        <th>Coste puntos</th>
+                         <th>
+                            <input value="<%=coste_puntos%>" type="text" name="txtCt">
+                        </th>
+                    </tr>
+                    <tr>   
+                        <th>Descripcion </th>
+                         <th>
+                            <input value="<%=descripcion%>" type="text" name="txtN">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Imagen</th>
+                          <th>
+                             <img src="<%=imagen%>" width="350" height="250">
+                        </th>
+                    </tr>
+                    <tr>
                         <td>
-                            <input type="hidden" name="txtId" value="<%= rs.getString(1)%>">
-                        </td>               
-                        <td>         
+                            <input type="submit" name="btE" value="Canjear">
                         </td>
                     </tr>
-                </form>
-                <%
-                        }//while
-                        rs.close();
-                        db.getConexion().close();
-                    } catch (SQLException e) {
-                        System.out.println("Error" + e);
-                    }
-                %>
-                </tbody>
+                </thead>
+            
             </table>
-        </div>
-    </body>
+                 </form>
 </html>

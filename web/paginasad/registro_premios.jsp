@@ -64,22 +64,22 @@
                 <table border="0">
                     <tr>
                         <td><label>Nombre del premio</label></td>
-                        <td><input name="txtNombre" type="text" placeholder="Nombre" required="" maxlength="15" minlenght="3" 
+                        <td><input name="txtNombre" type="text" placeholder="Nombre" required="" maxlength="150" minlenght="3" 
                                    style="text-transform:uppercase;" onkeypress=" return soloLetras(event)"></td>
                     </tr>
                     <tr>
                         <td><label>Coste de puntos </label></td>
-                        <td><input name="txtCoste" type="text" placeholder="Complete este campo" required="" maxlength="15" minlenght="3" 
+                        <td><input name="txtCoste" type="text" placeholder="Complete este campo" required="" maxlength="150" minlenght="3" 
                                    style="text-transform:uppercase;" onkeypress=" return solonumeros(event)"></td>
                     </tr>
                     <tr>      
                         <td><label> Descripción </label></td>
-                        <td><input name="txtDescrip" type="text" placeholder="Complete este campo" required="" maxlength="15" minlenght="3"
-                                   style="text-transform:uppercase;"onkeypress=" return soloLetras(event)"></td>
+                        <td><input name="txtDescrip" type="text" placeholder="Complete este campo" required="" maxlength="150" minlenght="3"
+                                   </td>
                     </tr>
                     <tr>
                         <td><label>Imagen</label></td>
-                        <td><input name="txtImagen" type="file" placeholder="Complete este campo" required="" maxlength="50" minlenght="3"></td>
+                        <td><input name="txtImagen" type="file" placeholder="Complete este campo" required="" maxlength="250" minlenght="3"></td>
                     </tr>
 
                     <tr>

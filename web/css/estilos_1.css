@@ -1,0 +1,150 @@
+.btG {
+    
+    
+    background: #d8d8d8;
+    background-image: -wekbit-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: -moz-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: -ms-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: -o-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    text-shadow: 3px 2px 1px #666666;
+    -webkit-box-shadow: 6px 5px 24px #666666;
+    -moz-box-shadow: 6px 5px 24px #666666;
+    
+    font-family: arial;
+    color: #fafafa;
+    font-size: 15px;
+    padding: 12px;
+    text-decoration: none;
+}
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+
+body{
+    color: chocolate;
+    background-color: red;
+    width: 100%;
+    max-width: 1400px;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    animation: cambia-color 10s linear infinite;
+    background: -webkit-linear-gradient(left,#505050,#B0B0B0);
+    background-size: 100%,100%;
+}
+form{
+
+    width: 100%;
+    max-width: 1400px;
+    padding: 40px;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    animation: cambia-color 10s linear infinite;
+    background: -webkit-linear-gradient(left,#505050,#B0B0B0);
+    background-size: 400%,400%;
+}
+
+@keyframes cambia-color{
+    0%{
+        background-position: 0%,100%;
+    }
+    50%{
+        background-position: 100%,100%;
+    }
+    100%{
+        background-position: 0%,100%;
+    }
+}
+
+.title{
+    font-size: 14px;
+    text-align: center;
+    font-weight:100;
+    color: white; 
+}
+
+.logotipo{
+    width: 140px;
+    margin-top: 40px;
+}
+
+::placeholder{
+    color: white;
+}
+
+input[type="text"]{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 2rem;
+    outline: 0px;
+    color: white;
+}
+
+input[type="email"]{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 2rem;
+    outline: 0px;
+    color: white;
+}
+input[type="file"]{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 2rem;
+    outline: 0px;
+    color: white;
+}
+
+input[type="number"]{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 2rem;
+    outline: 0px;
+    color: white;
+}
+
+input[type="submit"]{
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 100;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2rem;
+    border: 2px solid rgba(255,255,255,0.6);
+    outline: 0px;
+    color: white;
+    transition: background 300ms;
+}
+
+/*input[type="button"]:hover{
+    cursor: pointer;
+    background: rgba(255,255,255,0.6);
+}*/
