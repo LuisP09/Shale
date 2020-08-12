@@ -80,8 +80,13 @@ public class LoginServlet extends HttpServlet {
                 if(g.buscaParticipante(correo, contra)){
                 request.getSession().setAttribute("correo", correo);
                 request.getSession().setAttribute("contrasena", contra); 
-                response.sendRedirect("paginas/index.html");
-                }else
+                response.sendRedirect("paginas/mostrar_premios.jsp");
+                }else if (g.buscaad(correo, contra)) {
+                    request.getSession().setAttribute("correo", correo);
+                request.getSession().setAttribute("contrasena", contra); 
+                response.sendRedirect("paginasad/indexad.html");
+            
+        }else
                     response.sendRedirect("login.jsp");
     }
 

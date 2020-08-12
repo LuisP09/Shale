@@ -2,24 +2,23 @@
 package controlador;
 
 public class RegistroPre {
-        private String id_premios;
-        private String nombre_premio;
-        private String coste_puntos;
-        private String descripcion;
-        private String imagen;
-        private String id_puntos;
+        String id_premios;
+        String nombre_premio;
+        String coste_puntos;
+        String descripcion;
+        String imagen;
+
         
         
     public RegistroPre() {
     }
 
-    public RegistroPre(String id_premios, String nombre_premio, String coste_puntos, String descripcion, String imagen, String id_puntos) {
+    public RegistroPre(String id_premios, String nombre_premio, String coste_puntos, String descripcion, String imagen) {
         this.id_premios = id_premios;
         this.nombre_premio = nombre_premio;
         this.coste_puntos = coste_puntos;
         this.descripcion = descripcion;
         this.imagen = imagen;
-        this.id_puntos = id_puntos;
     }
     
 
@@ -62,15 +61,4 @@ public class RegistroPre {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
-
-    public String getId_puntos() {
-        return id_puntos;
-    }
-
-    public void setId_puntos(String id_puntos) {
-        this.id_puntos = id_puntos;
-    }
-
-   
- 
 }

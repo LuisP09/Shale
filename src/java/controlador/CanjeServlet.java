@@ -7,6 +7,7 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,7 +38,7 @@ public class CanjeServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CanjeServlet</title>");            
+            out.println("<title>Servlet CanjeServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet CanjeServlet at " + request.getContextPath() + "</h1>");
@@ -72,22 +73,37 @@ public class CanjeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        GestionRegistroP gestionRP = new GestionRegistroP();
-        String id_premios = request.getParameter("");
-        String nombre_premio = request.getParameter("txtNombre");
-        String coste_puntos = request.getParameter("txtCoste");
-        String descripcion = request.getParameter("txtDescrip");
-        String imagen = request.getParameter("txtImagen");
-        String id_puntos = request.getParameter("");
+
+        String id_premios = request.getParameter("id");
         String btV = request.getParameter("btV");
-        RegistroPre regis = new RegistroPre(id_premios, nombre_premio, coste_puntos, descripcion, imagen, id_puntos);
-        PrintWriter out= response.getWriter();
-        out.print(btV);
-          if(btV.equals("ver")){
-            regis =gestionRP.mostrarDatos(id_premios);
-            request.setAttribute("registro", regis);
+        
+        ArrayList<RegistroPre> regis;
+        GestionRegistroP gestion=new GestionRegistroP();
+
+         if (btV.equals("Ver")) {
+            regis = gestion.busqueda(id_premios);
+            request.setAttribute("regis", regis);
             request.getRequestDispatcher("paginas/canje_premio.jsp").forward(request, response);
+        }else if (btV.equals("ver")) {
+            regis = gestion.busqueda(id_premios);
+            request.setAttribute("regis", regis);
+            request.getRequestDispatcher("paginasad/canje_premio.jsp").forward(request, response);
         }//ver
+        /*
+        RegistroPre regis = new RegistroPre(id_premios, nombre_premio, coste_puntos, descripcion, imagen, id_puntos);
+        PrintWriter out = response.getWriter();
+        out.print(btV);
+        if (btV.equals("ver")) {
+            regis = gestionRP.mostrarDatos(id_premios);
+            request.setAttribute("registro", regis);
+            request.getRequestDispatcher("paginas/mostrar_premios.jsp").forward(request, response);
+        }//ver
+
+        /*if (btV.equals("Ver")) {
+            regis = gestionRP.mostrarDatos(id_premios);
+            request.setAttribute("regis", regis);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }//ver*/
     }
 
     /**

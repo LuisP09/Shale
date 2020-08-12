@@ -33,6 +33,25 @@ public class GestionLogin extends DBConexion {
         return b;
     }
 
+    public boolean buscaad(String correo, String contra) {
+        boolean b = false;
+        sql = "SELECT * FROM admin WHERE usuario_ad=? AND contrasena_ad =?";
+        try {
+            PreparedStatement consulta = getConexion().prepareStatement(sql);
+            consulta.setString(1, correo);
+            consulta.setString(2, contra);
+
+            ResultSet rs = consulta.executeQuery();
+
+            if (rs.next()) {
+                b = true;
+            }
+
+        } catch (SQLException e) {
+            System.out.println("error" + e);
+        }
+        return b;
+    }
     public static void main(String[] args) {
         GestionLogin g = new GestionLogin();
         if (g.buscaParticipante("pacheco@gmail.com", "123456")) {

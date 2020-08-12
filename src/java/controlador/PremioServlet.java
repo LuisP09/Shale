@@ -78,15 +78,15 @@ public class PremioServlet extends HttpServlet {
         String coste_puntos = request.getParameter("txtCoste");
         String descripcion = request.getParameter("txtDescrip");
         String imagen = request.getParameter("txtImagen");
-        String id_puntos = request.getParameter("");
-        String btG = request.getParameter("btG");
-        RegistroPre regis = new RegistroPre(id_premios, nombre_premio, coste_puntos, descripcion, imagen, id_puntos);
-        PrintWriter out= response.getWriter();
+
+        String btG = request.getParameter("btG");  
+        RegistroPre regis = new RegistroPre(id_premios, nombre_premio, coste_puntos, descripcion, imagen);
+        PrintWriter out = response.getWriter();
         out.print(btG);
-        if (btG.equals("Guardar")){
-            if(gestionRP.altaPremio(regis)){
-            response.sendRedirect("paginas/index.html");
-            }
+        if (btG.equals("Guardar")) {
+            if (gestionRP.altaPremio(regis)) {
+                response.sendRedirect("paginasad/indexad.html");
+            }//if alta
         }
     }
 
