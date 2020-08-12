@@ -89,21 +89,6 @@ public class CanjeServlet extends HttpServlet {
             request.setAttribute("regis", regis);
             request.getRequestDispatcher("paginasad/canje_premio.jsp").forward(request, response);
         }//ver
-        /*
-        RegistroPre regis = new RegistroPre(id_premios, nombre_premio, coste_puntos, descripcion, imagen, id_puntos);
-        PrintWriter out = response.getWriter();
-        out.print(btV);
-        if (btV.equals("ver")) {
-            regis = gestionRP.mostrarDatos(id_premios);
-            request.setAttribute("registro", regis);
-            request.getRequestDispatcher("paginas/mostrar_premios.jsp").forward(request, response);
-        }//ver
-
-        /*if (btV.equals("Ver")) {
-            regis = gestionRP.mostrarDatos(id_premios);
-            request.setAttribute("regis", regis);
-            request.getRequestDispatcher("login.jsp").forward(request, response);
-        }//ver*/
     }
 
     /**
